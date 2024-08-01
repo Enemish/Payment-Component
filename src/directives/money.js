@@ -4,15 +4,15 @@ export default {
       if (!value) return '';
       let stringValue = value.toString();
       stringValue = stringValue.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-      if (!stringValue.includes(' ₽')) {
-        stringValue += ' ₽';
+      if (!stringValue.includes('₽')) {
+        stringValue += '₽';
       }
       return stringValue;
     }
 
     function unformat(value) {
       if (!value) return '';
-      return value.replace(/[. ₽]/g, '');
+      return value.replace(/[.₽]/g, '');
     }
 
     el.oninput = function(e) {
@@ -38,8 +38,8 @@ export default {
     
       // Проверяем разницу в длине строки до и после форматирования
       if (formattedValue.length !== oldUnformattedLength) {
-        if (cursorPosition > inputLength - 2) {
-          newCursorPosition = formattedValue.length - 2;
+        if (cursorPosition > inputLength - 1) {
+          newCursorPosition = formattedValue.length - 1;
         } else {
           let lengthDifference = formattedValue.length - inputLength;
           newCursorPosition = cursorPosition + lengthDifference;
@@ -56,8 +56,8 @@ export default {
       if (!value) return '';
       let stringValue = value.toString();
       stringValue = stringValue.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-      if (!stringValue.includes(' ₽')) {
-        stringValue += ' ₽';
+      if (!stringValue.includes('₽')) {
+        stringValue += '₽';
       }
       return stringValue;
     }

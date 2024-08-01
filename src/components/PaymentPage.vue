@@ -1,18 +1,32 @@
 <template>
-    <div class="container mx-auto lg:pt-10 pt-[25px] max-w-[1190px] px-[15px]">
-        <h1 class="text-[18px] sm:text-3xl lg:text-4xl font-bold mb-[30px]">
-            <span class="text-primary">Пополните баланс,</span>
-            <span class="text-secondary">
+    <div 
+        class="
+        @container max-w-[1190px]
+        mx-auto px-[15px] sm-max:px-[15px] lg-max:px-[25px] bmd-max:px-[25px] md-max:px-[25px]
+        lg-max:pt-10 pt-[30px] 
+        ">
+        <h1 class="
+        mb-[30px] sm-max:mb-[10px]
+        text-4xl md-max:text-3xl sm-max:text-[18px] sm-max:leading-[19.8px]"
+        >
+            <span class="text-primary font-[700]">Пополните баланс,</span>
+            <span class="text-secondary font-[500]">
                 чтобы получить номер для приема смс</span
             >
         </h1>
         <div class="text-primary">
-            <div class="relative flex items-center mb-[15px]">
+            <div 
+                class="
+                relative flex items-center 
+                mb-[12px] sm-max:mb-[10px]">
                 <span
-                    class="block text-[14px] lg:text-[20px] sm:text-[20px] font-[400] mr-[9px]"
+                    class="
+                    block 
+                    mr-[9px] 
+                    text-[20px] sm-max:text-[14px] font-[400]"
                     >Выберите валюту оплаты</span
                 >
-                <div class="relative flex items-center lg:block hidden">
+                <div class="relative flex items-center sm-max:hidden">
                     <img
                         @mouseover="showTooltip = true"
                         @mouseleave="showTooltip = false"
@@ -23,53 +37,96 @@
                     <transition name="fade">
                         <div
                             v-if="showTooltip"
-                            class="absolute top-[23px] w-[247px] px-3 py-2 font-[500] text-[14px] bg-white rounded-[10px] tooltip-shadow z-10"
+                            class="
+                            absolute top-[23px] w-[247px] 
+                            px-3 py-2 
+                            font-[500] text-[14px] 
+                            bg-white 
+                            rounded-[10px] 
+                            tooltip-shadow z-10"
                         >
                             Тут выбирается способ которым вы будете оплачивать
                         </div>
                     </transition>
                 </div>
             </div>
-            <div class="flex flex-wrap gap-4 mb-[30px]">
+            <div class="
+                flex flex-wrap gap-4 sm-max:gap-[14px]
+                mb-[30px] sm-max:mb-[22px]
+                ">
                 <!-- Криптовалюты -->
                 <div
-                    class="relative flex items-center py-[22px] pr-[24px] pl-[20px] bg-white rounded-[12px] shadow-custom cursor-pointer"
+                    class="
+                    relative flex items-center
+                    py-[22px] pr-[24px] pl-[20px] 
+                    sm-max:pt-[10px] sm-max:pb-3 sm-max:pl-4 sm-max:pr-[18px]
+                    bg-white rounded-[12px] 
+                    shadow-custom 
+                    cursor-pointer"
                     @click="toggleCurrencies('CRYPTO')"
                 >
                     <img
                         src="/src/assets/images/icons/crypto-icon.svg"
                         alt="Криптовалюты"
-                        class="w-6 h-6 mr-[10px]"
+                        class="
+                        w-6 h-6
+                        mr-[10px]"
                     />
-                    <span class="font-[500] text-[14px]">Криптовалюты</span>
+                    <span class="font-[500] text-[14px] sm-max:text-[13px]">Криптовалюты</span>
                     <span
-                        class="absolute top-[3px] right-[3px] px-[6px] py-[2px] text-[10px] rounded-[100px] text-white recommend-bg"
+                        class="
+                        absolute top-[3px] right-[2px] sm-max:top-[1px] sm-max:right-1  
+                        pr-[7px] pl-[6px] pt-[0] pb-[1px]
+
+                        sm-max:pr-[3px] sm-max:pl-[5px] 
+                        text-[10px] sm-max:text-[9px] rounded-[100px] text-white recommend-bg"
                         >Рекомендуем</span
                     >
                 </div>
 
                 <!-- Обычные валюты -->
                 <div
-                    class="relative flex items-center py-2 px-1 bg-white rounded-lg shadow-custom cursor-pointer"
+                    class="
+                    relative flex items-center 
+                    py-2 px-1 sm-max:py-1 sm-max:px-[2px] 
+                    bg-white 
+                    rounded-lg 
+                    shadow-custom 
+                    cursor-pointer"
                     @click="toggleCurrencies('FIAT')"
                 >
                     <div
-                        class="flex item-center py-3 pr-[20px] pl-4 mr-[10px] border-r"
+                        class="
+                        flex item-center 
+                        py-3 pr-[20px] pl-4 mr-[10px] sm-max:py-2 sm-max:pr-[16px] sm-max:pl-3    
+                        border-r"
                     >
                         <img
                             src="/src/assets/images/icons/rub-icon.svg"
                             alt="RUB"
-                            class="w-6 h-6 mr-3"
+                            class="
+                            w-[28px] h-[28px] sm-max:w-6 sm-max:h-6 
+                            mr-3"
                         />
-                        <span class="text-4 font-[500]">RUB</span>
+                        <span 
+                            class="
+                            text-[16px] sm-max:text-[14px] font-[500]">
+                        RUB
+                        </span>
                     </div>
-                    <div class="flex items-center p-3 pr-4">
+                    <div 
+                        class="
+                        flex items-center 
+                        p-3 pr-4 sm-max:p-2 sm-max:pr-3">
                         <img
                             src="/src/assets/images/icons/exchange-icon.svg"
                             alt="RUB"
-                            class="w-6 h-6 mr-3"
+                            class="w-6 h-6 sm-max:mr-2 mr-[8px]"
                         />
-                        <span class="text-[14px] font-[500] mr-[10px]"
+                        <span 
+                            class="
+                            mr-[10px] sm-max:mr-2
+                            text-[14px] sm-max:text-[13px] font-[500]"
                             >Другие валюты</span
                         >
                         <img
@@ -86,12 +143,22 @@
             <transition name="fade">
                 <div
                     v-if="showCurrencies"
-                    class="flex flex-wrap gap-[15px] mb-[15px] transition-all duration-300"
+                    class="
+                    flex flex-wrap gap-[15px] sm-max:gap-2 sm-max:grid sm-max:grid-cols-3
+                    mb-[15px] 
+                    transition-all duration-300"
                 >
                     <div
                         v-for="currency in availableCurrencies"
                         :key="currency.code"
-                        class="relative flex items-center py-3 pr-6 pl-[20px] bg-white rounded-xl shadow-custom cursor-pointer transition-all duration-300"
+                        class="
+                        relative flex items-center 
+                        py-3 pr-6 pl-[20px] sm-max:py-[10px] sm-max:pl-4 sm-max:pr-[21px]
+                        bg-white 
+                        rounded-xl 
+                        shadow-custom 
+                        cursor-pointer 
+                        transition-all duration-300"
                         @click="selectCurrency(currency.code)"
                         :class="{
                             'active-border': selectedCurrency === currency.code,
@@ -102,7 +169,7 @@
                             :alt="currency.title"
                             class="w-6 h-6 mr-2"
                         />
-                        <span class="text-sm font-medium">{{
+                        <span class="text-[14px] sm-max:text-[12px] font-[500]">{{
                             currency.title
                         }}</span>
                     </div>
@@ -111,21 +178,42 @@
         </div>
     </div>
     <!-- Блок выбора конкретного метода оплаты -->
-    <div class="container mx-auto max-w-[1210px] px-[15px] mb-[5px]">
+    <div 
+        class="
+        @container max-w-[1210px] 
+        mx-auto px-[15px] mb-[11px] sm-max:px-[5px]">
         <label
-            class="block lg:text-[20px] sm:text-[20px] text-[14px] font-[400] lg:pl-[10px]"
+            class="
+            block 
+            @md:mb-[5px] pl-[10px] 
+            text-[20px] md-max:text-[20px] sm-max:text-[14px] font-[400] leading-[23.44px] sm-max:leading-[1]"
             >Выберите способ оплаты</label
         >
         <div
-            class="max-h-[214px] overflow-y-scroll custom-scrollbar py-[10px] px-[10px]"
+            class="
+            max-h-[214px] sm-max:max-h-[155px]  
+            overflow-y-scroll 
+            custom-scrollbar 
+            py-[10px] pl-[12px] pr-[8px]"
         >
             <div
-                class="methods grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4"
+                class="
+                methods 
+                grid gap-4 grid-cols-5 
+                sm-max:gap-2
+                sm-max:grid-cols-2 
+                md-max:grid-cols-2 
+                bmd-max:grid-cols-3 
+                "
             >
                 <div
                     v-for="method in paymentMethods"
                     :key="method.code"
-                    class="relative flex items-center text-[13px] sm:text-[14px] lg:text-[16px] py-[10px] pl-[12px] lg:py-[18px] lg:pl-[20px] bg-white rounded-xl shadow-custom cursor-pointer transition-all duration-300"
+                    class="
+                    relative flex items-center 
+                    py-[16px] pl-[20px] sm-max:py-[10px] sm-max:pl-[12px]  
+                    text-[16px] md-max:text-[14px] sm-max:text-[13px] 
+                    bg-white rounded-xl shadow-custom cursor-pointer transition-all duration-300"
                     @click="selectPaymentMethod(method.code)"
                     :class="{
                         'active-border': selectedPaymentMethod === method.code,
@@ -134,17 +222,27 @@
                     <img
                         :src="getIcon(method.code)"
                         alt=""
-                        class="w-10 h-8 mr-[13px]"
+                        class="
+                        w-[48px] h-[36px] sm-max:w-[36px] sm-max:h-[30px]
+                        mr-[13px] sm-max:mr-[6px]"
                     />
-                    <div class="flex flex-col leading-none">
-                        <span class="text-4 font-[500]">{{
+                    <div class="flex flex-col leading-[15.36px]">
+                        <span 
+                            class="
+                            text-[16px] sm-max:text-[13px] font-[500]">{{
                             method.title
                         }}</span>
                         <div>
-                            <span class="text-[13px] font-[400] opacity-60"
+                            <span 
+                                class="
+                                mr-[2px]
+                                text-[13px] sm-max:text-[11px] font-[400] 
+                                opacity-60"
                                 >Комиссия:</span
                             >
-                            <span class="text-[13px] font-[500]">{{
+                            <span 
+                            class="
+                            text-[13px] sm-max:text-[11px] font-[500]">{{
                                 method.commission
                             }}</span>
                         </div>
@@ -153,10 +251,12 @@
             </div>
         </div>
     </div>
-    <div class="container mx-auto max-w-[1190px] px-[15px] mb-[60px]">
+    <div class="
+        @container max-w-[1190px]
+        mx-auto px-[15px] sm-max:px-[15px] lg-max:px-[25px] bmd-max:px-[25px] md-max:px-[25px] mb-[60px]">
         <!-- Список стран -->
         <div class="information-toggle relative">
-            <button @click="toggleInfo" class="flex items-center mb-[10px]">
+            <button @click="toggleInfo" class="flex items-center mb-[30px] sm-max:mb-[20px]">
                 <img
                     @mouseover="showTooltipAtt = true"
                     @mouseleave="showTooltipAtt = false"
@@ -164,7 +264,9 @@
                     alt="tooltip"
                     class="w-[13px] h-[13px] cursor-pointer transition-all duration-300 mr-[6px]"
                 />
-                <span class="text-3 lg:text-[14px] font-[500] text-left">{{
+                <span 
+                    class="
+                    text-[14px] sm-max:text-[12px] font-[500] text-left leading-[14.06px]">{{
                     showInfo
                         ? "Внимание, при нажатии скрывается информация про страны"
                         : "Внимание, при нажатии раскрывается информация про страны"
@@ -189,11 +291,11 @@
             </button>
             <div
                 v-if="showInfo"
-                class="text-3 sm:text-[14px] lg:text-[14px] font-[400]"
+                class="sm-max:text-3 text-[14px] font-[400] max-w-[462px] transition-all duration-300"
             >
-                <p class="mb-[10px]">Зачисление до 6 минут</p>
-                <p>Эта платежная система не принимает платежи из стран:</p>
-                <ul>
+                <p class="mb-[10px] sm-max:mb-[8px]">Зачисление до 6 минут</p>
+                <p class="mb-[2px] sm-max:pr-[50px] sm-max:mb-[4px]">Эта платежная система не принимает платежи из стран:</p>
+                <ul class="sm-max:leading-[16.8px] mb-[20px]">
                     <li>
                         Армения, Австрия, Азербайджан, Бельгия, Болгария, Кипр,
                         Чешская Республика, Дания, Эстония, Финляндия, Франция,
@@ -211,15 +313,18 @@
             </div>
         </div>
 
-        <div class="mt-6">
+        <div class="">
             <label
-                class="block text-[14px] sm:text-[20px] lg:text-[20px] font-[400] mb-[15px]"
+                class="
+                block 
+                mb-[13px] sm-max:mb-[5px]
+                text-[20px] sm-max:text-[14px] font-[400]"
                 >Укажите сумму платежа</label
             >
             <div
                 ref="inputWrapper"
                 :class="[
-                    'relative block border mb-[10px] border-[#0000001A] custom-placeholder rounded-[12px] w-full transition-all duration-100',
+                    'relative block border mb-[10px] sm-max:mb-[5px] border-[#0000001A] custom-placeholder rounded-[12px] w-full transition-all duration-100',
                     { 'active-border': inputActive },
                     { 'border-[#E86068]': errorMessage },
                 ]"
@@ -227,7 +332,13 @@
                 <input
                     v-model="amount"
                     v-money="amount"
-                    class="py-4 lg:pl-[20px] pl-4 rounded-[12px] w-full custom-placeholder focus:outline-none focus:border-transparent"
+                    class="
+                    w-full 
+                    py-[15px] pl-[20px] sm-max:pl-4 sm-max:pt-[16px] sm-max:pb-[12px] 
+                    text-[16px] sm-max:text-[14px] font-[500] leading-[18.75px] sm-max:leading-[16.41px] 
+                    rounded-[12px] 
+                    custom-placeholder 
+                    focus:outline-none focus:border-transparent"
                     :placeholder="placeholderText"
                     @input="validateAmount"
                     @click="inputClick"
@@ -236,20 +347,35 @@
                     id="clear-input"
                     @click="clearInput"
                     class="absolute right-2.5 top-1/2 transform -translate-y-1/2 cursor-pointer p-2"
-                    >✕</span
+                    v-if="isClearVisible"
                 >
+                    ✕
+                </span>
             </div>
             <div
                 v-if="errorMessage"
-                class="text-[#E86068] text-[12px] sm:text-sm lg:text-[14px] mb-[10px] mt-[-5px]"
+                class="text-[#E86068] text-[14px] sm-max:text-[12px] mb-[10px] mt-[-5px]"
             >
                 {{ errorMessage }}
             </div>
-            <div class="flex flex-wrap gap-[10px] mb-[30px]">
+            <div 
+                class="
+                flex gap-[10px] mb-[24px] sm-max:mb-[10px]
+                hide-scrollbar
+                sm-max:overflow-x-scroll
+                md-max:overflow-x-scroll
+                sm-max:py-[2px] sm-max:px-[2px]
+                md-max:py-[2px] md-max:px-[2px]
+                ">
                 <button
                     v-for="preset in presets"
                     :key="preset"
-                    class="text-[14px] font-[500] px-3 py-2 bg-[#2125290A] text-[#21252999] rounded-[10px] transition-colors duration-100 hover:text-[#212529] focus:text-[#212529]"
+                    class="
+                    px-3 py-2 
+                    text-[14px] font-[500] text-[#21252999] 
+                    bg-[#2125290A] 
+                    hover:text-[#212529] focus:text-[#212529]
+                    rounded-[10px] transition-colors duration-100" 
                     @click="setPresetAmount(preset)"
                     :class="[
                         { 'active-border bg-white': presetActive === preset },
@@ -262,17 +388,25 @@
         <div class="">
             <button
                 @click="handlePayment"
-                class="bg-gradient-to-r from-[#C5A67C] to-[#E2C299] hover:opacity-[80%] mb-[20px] p-2 rounded-[12px] text-white text-[20px] font-[500] w-full text-sm sm:text-base lg:text-lg transition-opacity duration-100"
+                class="
+                w-full
+                mb-[20px] py-[19px] sm-max:py-[14px] 
+                text-white text-[20px] font-[500] sm-max:text-[18px] leading-[23.44px] sm-max:leading-[21.09px]
+                bg-gradient-to-r from-[#C5A67C] to-[#E2C299] hover:opacity-[80%] 
+                rounded-[12px]
+                transition-opacity duration-100"
             >
                 Оплатить
             </button>
         </div>
         <div
-            class="block lg:hidden text-3 sm:text-[14px] lg:text-[14px] font-[400]"
+            class="
+            sm-max:block hidden 
+            text-[12px] font-[400] leading-[20px]"
         >
-            <p class="mb-[10px]">Зачисление до 6 минут</p>
-            <p>Эта платежная система не принимает платежи из стран:</p>
-            <ul>
+            <p class="mb-[8px]">Зачисление до 6 минут</p>
+            <p class="pr-[50px] mb-[4px]">Эта платежная система не принимает платежи из стран:</p>
+            <ul class="leading-[16.8px]">
                 <li>
                     Армения, Австрия, Азербайджан, Бельгия, Болгария, Кипр,
                     Чешская Республика, Дания, Эстония, Финляндия, Франция,
@@ -292,10 +426,10 @@
 </template>
 
 <script>
-import axios from "axios";
+/* import axios from "axios"; */
+/* import { useRouter } from "vue-router"; */
 import { paymentInfo } from "../mockData";
 import { mockBackend } from "../mockBackend";
-import { useRouter } from "vue-router";
 
 export default {
     data() {
@@ -362,12 +496,15 @@ export default {
         iconSourceAtt() {
             return this.showTooltipAtt ? this.activeIcon2 : this.passiveIcon2;
         },
+        isClearVisible() {
+            return this.amount > 0;
+        }
     },
     methods: {
         getPlaceholderText() {
             return `Минимальная сумма платежа: ${this.formatNumber(
                 this.minAmount
-            )} ₽`;
+            )}₽`;
         },
         formatNumber(number) {
             return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -446,9 +583,9 @@ export default {
                 return;
             }
             if (this.amount < this.minAmount) {
-                this.errorMessage = `Минимальная сумма для этого метода оплаты: ${this.formatNumber(
+                this.errorMessage = `Внимание, минимальная сумма: ${this.formatNumber(
                     this.minAmount
-                )} ₽`;
+                )}₽`;
                 return;
             }
 
@@ -583,7 +720,7 @@ export default {
 
 .custom-scrollbar::-webkit-scrollbar {
     width: 4px;
-    height: 100px;
+    height: 50px;
 }
 .custom-scrollbar::-webkit-scrollbar-button {
     height: 10px;
@@ -592,13 +729,23 @@ export default {
     background-color: #fff;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-		background-color: #d8d8d8;
+	background-color: #d8d8d8;
     border-radius: 50px;
 }
+.hide-scrollbar {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+    overflow: -moz-scrollbars-none;
+    overflow: -webkit-paged-x;
+}
 
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Safari и Chrome */
+}
 .custom-placeholder::placeholder {
     font-size: 16px;
     font-weight: 400;
+    line-height: 18.75px;
     color: #212529;
     opacity: 0.6;
 }
@@ -611,11 +758,6 @@ export default {
 @media (max-width: 640px) {
     .custom-placeholder::placeholder {
         font-size: 14px;
-    }
-}
-@media (max-width: 373px) {
-    .methods {
-        grid-template-columns: 1fr;
     }
 }
 </style>
