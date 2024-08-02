@@ -640,6 +640,7 @@ export default {
             const iconPath = icons[icon_code]
                 ? `/src/assets/images/icons/${icons[icon_code]}`
                 : "/src/assets/images/icons/default-icon.svg";
+            console.log("iconPath: ", iconPath);
             return new URL(iconPath, import.meta.url).href;
         },
         inputClick() {
