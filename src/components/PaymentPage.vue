@@ -192,7 +192,8 @@
         <div
             class="
             max-h-[214px] sm-max:max-h-[155px]  
-            overflow-y-scroll 
+            overflow-y-auto
+            overflow-x-hidden 
             custom-scrollbar 
             py-[10px] pl-[12px] pr-[8px]"
         >
@@ -720,19 +721,23 @@ export default {
 
 
 .custom-scrollbar::-webkit-scrollbar {
-    width: 4px;
-    height: 50px;
-}
-.custom-scrollbar::-webkit-scrollbar-button {
-    height: 10px;
+    width: 4px; 
 }
 .custom-scrollbar::-webkit-scrollbar-track {
     background-color: #fff;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
-	background-color: #d8d8d8;
-    border-radius: 50px;
+    background-color: #d8d8d8; 
+    border-radius: 50px; 
 }
+.custom-scrollbar::-webkit-scrollbar-button {
+    background-color: transparent; 
+    border: none; 
+    display: block;
+    height: 5px;
+}
+
 .hide-scrollbar {
     -ms-overflow-style: none; /* Internet Explorer 10+ */
     scrollbar-width: none; /* Firefox */
@@ -741,7 +746,7 @@ export default {
 }
 
 .hide-scrollbar::-webkit-scrollbar {
-  display: none; /* Safari и Chrome */
+    display: none; /* Safari и Chrome */
 }
 .custom-placeholder::placeholder {
     font-size: 16px;
